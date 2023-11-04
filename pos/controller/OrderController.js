@@ -1,8 +1,8 @@
-import {OrderModel} from "../model/OrderModel";
-import {customer_db} from "../db/db";
-import {item_db} from "../db/db";
-import {order_db} from "../db/db";
-import {ItemModel} from "../model/ItemModel";
+import {OrderModel} from "../model/OrderModel.js";
+import {customer_db} from "../db/db.js";
+import {item_db} from "../db/db.js";
+import {order_db} from "../db/db.js";
+import {ItemModel} from "../model/ItemModel.js";
 
 let cusRowIndex = null;
 let itemRowIndex = null;
@@ -35,6 +35,7 @@ const loadIdDate = () =>{
 
     $("#date").val(new Date().toLocaleDateString('en-GB'));
 };
+
 loadIdDate();
 
 //loadCustomers
@@ -52,7 +53,7 @@ $(".order").on('click', ()=>{
 //setCustomerDetails
 $("#customerSelector").on('click','select', function (){
     cusRowIndex = customer_db.findIndex(customer => customer.id === $(this).val());
-    if(cusRowIndex == -1) return;
+    if(cusRowIndex === -1) return;
     $("#orderCusName").val( customer_db[cusRowIndex].name );
     $("#orderCusAddress").val( customer_db[cusRowIndex].address );
     $("#orderCusContact").val( customer_db[cusRowIndex].contact );

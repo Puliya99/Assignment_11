@@ -1,5 +1,5 @@
-import {ItemModel} from "../model/ItemModel";
-import {customer_db, item_db} from "../db/db";
+import {ItemModel} from "../model/ItemModel.js";
+import {item_db} from "../db/db.js";
 
 let row_index = null;
 
@@ -23,7 +23,8 @@ const loadItemData = () => {
 $(".item").on('click', ()=> loadItemData());
 
 //save
-$("#item-save").on('click', () => {
+$("#item_save").on('click', () => {
+    console.log("ABC")
     let id = $("#itemId").val(),
         name = $("#itemName").val(),
         price = Number.parseFloat($("#itemPrice").val()),
@@ -32,7 +33,7 @@ $("#item-save").on('click', () => {
     if(!checkValidation(id, name, price, qty)) return;
 
     let item = new ItemModel(id, name, price, qty);
-    items.push(item);
+    item_db.push(item);
 
     loadItemData();
     $("#item-reset").click();
@@ -58,7 +59,7 @@ $("#itemTable").on('click', "tr", function(){
 });
 
 //update
-$("#item-update").on('click', () => {
+$("#item_update").on('click', () => {
     let id = $("#itemId").val(),
         name = $("#itemName").val(),
         price = Number.parseFloat($("#itemPrice").val()),
@@ -84,7 +85,7 @@ $("#item-update").on('click', () => {
 });
 
 //remove
-$("#item-delete").on('click', () => {
+$("#item_delete").on('click', () => {
     if (row_index == null) return;
     Swal.fire({
         title: 'Are you sure?',
@@ -148,6 +149,6 @@ function generateNewId(lastId) {
     return newId;
 }
 
-$("#item-reset").on('click', ()=>{
+$("#item_reset").on('click', ()=>{
     setTimeout(loadId, 10);
 })

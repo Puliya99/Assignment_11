@@ -1,4 +1,4 @@
-import {CustomerModel} from "../model/CustomerModel";
+import {CustomerModel} from "../model/CustomerModel.js";
 import {customer_db} from "../db/db.js";
 
 var row_index = null;
@@ -24,6 +24,7 @@ $(".customer").on('click', ()=> loadCustomerData());
 
 // submit
 $("#save").on('click', () => {
+    console.log("ABC")
     let id = $("#cusId").val(),
         name = $("#cusName").val(),
         address = $("#cusAddress").val(),

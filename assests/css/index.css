@@ -101,6 +101,6 @@ table tbody, table thead {
 
 body{
     overflow-x: hidden;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
     background-color: #FCF2D7;
 }
