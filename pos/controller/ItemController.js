@@ -36,7 +36,7 @@ $("#item_save").on('click', () => {
     item_db.push(item);
 
     loadItemData();
-    $("#item-reset").click();
+    $("#item_reset").click();
     loadId();
     Swal.fire({
         icon: 'success',

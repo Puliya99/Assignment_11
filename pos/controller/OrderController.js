@@ -8,6 +8,7 @@ let cusRowIndex = null;
 let itemRowIndex = null;
 let total = 0;
 let subTotal = 0;
+let sum = 0;
 let tempItems = [];
 let addedItems = [];
 
@@ -100,9 +101,8 @@ $("#add-item-btn").on('click', ()=>{
     tempItems.push(item_db[itemRowIndex]);
     item_db[itemRowIndex].qty -= qty;
     $("#qty-on-hand").val( item_db[itemRowIndex].qty );
-
-    subTotal += itemTotal;
-    $("#subTotal").text(`Sub Total: Rs. ${subTotal}`);
+    sum += itemTotal;
+    $("#sum").text(`Total: Rs. ${sum}`);
 });
 
 
@@ -113,8 +113,15 @@ $("#cash").on('input', ()=>{
     $("#balance").val(Number.parseFloat($("#cash").val()) - Number.parseFloat($("#subTotal").text().slice(15)));
 })
 
+$("#discount").on('input', () => {
+    let subTotals = Number.parseFloat($("#sum").text().slice(11)); // Extract the Sub Total value
+    let discount = Number.parseFloat($("#discount").val()) || 0; // Get the discount input value (default to 0 if not a valid number)
+    let discountedTotal = subTotals - (subTotals * discount / 100); // Calculate the discounted total
+    $("#subTotal").text(`Sub Total: Rs. ${discountedTotal.toFixed(2)}`); // Update the Total with the discounted value
+});
 //save order
 $("#order-btn").on('click', ()=>{
+    sum =0;
     console.log("ordered");
 
     let orderId = $("#orderId").val(),
@@ -156,6 +163,8 @@ $("#order-btn").on('click', ()=>{
             }
         })
     }
+    $("#subTotal").text('SubTotal: Rs.000.00');
+    $("#sum").text('Total: Rs.000.00');
 });
 
 //cancel order
@@ -178,7 +187,8 @@ $("#cancel-order-btn").on('click', ()=>{
 
             $("#order-section form").trigger('reset');
             $("select").val("");;
-            $("#subTotal").text('Sub Total: Rs. 0000.00');
+            $("#subTotal").text('SubTotal: Rs.000.00');
+            $("#sum").text('Total: Rs.000.00');
             addedItems = [];
             loadAddItemData();
 

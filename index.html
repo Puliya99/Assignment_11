@@ -230,10 +230,10 @@
             <form action="" class="row">
                 <div class="col-lg-5 col-md-6 col-12 row mt-2 mb-2">
                     <div class="col col-12 mb-2">
-                        <label class="total">Total: 0000.00</label>
+                        <label class="total" id="sum">Total: Rs.000.00</label>
                     </div>
                     <div class="col col-12">
-                        <label id="subTotal" class="total">Sub Total: Rs. 0000.00</label>
+                        <label id="subTotal" class="total">SubTotal: Rs.000.00</label>
                     </div>
                 </div>
 
@@ -252,7 +252,7 @@
                     </div>
 
                     <div class="mb-3 col-lg-6 col-md-5">
-                        <label for="order-btn" class="form-label" style="color: #B2FFBA;">o</label><br>
+                        <label for="order-btn" class="form-label" style="color: #B2FFBA;"></label><br>
                         <button id="order-btn" type="button" class="btn btn-success mb-1 black-border-1">Order</button>
                     </div>
                 </div>
@@ -269,7 +269,7 @@
                 <th>Item Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Total</th>
+                <th id="total">Total</th>
                 </thead>
 
                 <tbody id="orderedItemTBody">
