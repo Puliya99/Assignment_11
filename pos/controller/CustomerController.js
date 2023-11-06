@@ -20,6 +20,8 @@ const loadCustomerData = () => {
     });
 };
 
+
+
 $(".customer").on('click', ()=> loadCustomerData());
 
 // submit

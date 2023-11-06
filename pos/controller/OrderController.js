@@ -38,17 +38,23 @@ const loadIdDate = () =>{
 
 loadIdDate();
 
-//loadCustomers
-$(".order").on('click', ()=>{
-    $("#orderCusId").html("");
-    customer_db.map((customer) => {
-        $('#orderCusId').append($('<option>', {
-            value: customer.id,
-            text: customer.id
-        }));
+//lode customer to combobox
+ export const loadCustomers = () => {
+
+    $("#orderCusId").empty();
+    customer_db.map((orderCusId) => {
+        $("#orderCusId").append(`<option value="${orderCusId.id}">${orderCusId.id}</option>`);
     });
-    $("#orderCusId").val("");
-});
+};
+
+//lode Items to combobox
+ export const loadItems = () => {
+
+    $("#orderItemId").empty();
+    item_db.map((orderItemId) => {
+        $("#orderItemId").append(`<option value="${orderItemId.id}">${orderItemId.id}</option>`);
+    });
+};
 
 //setCustomerDetails
 $("#customerSelector").on('click','select', function (){
@@ -57,18 +63,6 @@ $("#customerSelector").on('click','select', function (){
     $("#orderCusName").val( customer_db[cusRowIndex].name );
     $("#orderCusAddress").val( customer_db[cusRowIndex].address );
     $("#orderCusContact").val( customer_db[cusRowIndex].contact );
-});
-
-//loadItems
-$(".order").on('click', ()=> {
-    $("#orderItemId").html("");
-    item_db.map((item) => {
-        $('#orderItemId').append($('<option>', {
-            value: item.id,
-            text: item.id
-        }));
-    });
-    $("#orderItemId").val("");
 });
 
 //setItemDetails
@@ -110,6 +104,7 @@ $("#add-item-btn").on('click', ()=>{
     subTotal += itemTotal;
     $("#subTotal").text(`Sub Total: Rs. ${subTotal}`);
 });
+
 
 //show balance
 $("#cash").on('input', ()=>{
