@@ -1,11 +1,12 @@
-import {loadCustomers} from "../controller/OrderController.js"
-import {loadItems} from "../controller/OrderController.js"
+import {loadCustomers} from "../controller/OrderController.js";
+import {loadItems} from "../controller/OrderController.js";
 
 const displayNoneSections = () => {
     $("#dashboard-section").css("display", "none");
     $("#customer-section").css("display", "none");
     $("#item-section").css("display", "none");
     $("#order-section").css("display", "none");
+    $("#order-history-section").css("display", "none");
 }
 
 displayNoneSections();
@@ -31,4 +32,10 @@ $("#order").on('click', () => {
     loadItems();
     displayNoneSections();
     $("#order-section").css("display", "block");
+});
+
+$("#history-order-btn").on('click', () => {
+    displayNoneSections();
+    $("#sectionName").text("Order History");
+    $("#order-history-section").css("display", "block");
 });

@@ -73,7 +73,7 @@ $("#item_update").on('click', () => {
     item_db[row_index].qty = qty;
 
     loadItemData();
-    $("#item-reset").click();
+    $("#item_reset").click();
     row_index = null;
     loadId();
     Swal.fire({
@@ -99,7 +99,7 @@ $("#item_delete").on('click', () => {
         if (result.isConfirmed) {
             item_db.splice(row_index, 1);
             loadItemData();
-            $("#item-reset").click();
+            $("#item_reset").click();
             loadId();
             Swal.fire(
                 'Deleted!',
