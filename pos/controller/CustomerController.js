@@ -120,15 +120,15 @@ function checkValidation(id, name, address, contact){
         showErrorAlert("Please enter a valid ID!")
         return false;
     }
-    if(!name){ //check name
+    if(!/^[A-Za-z\s]+$/.test(name)){ //check name
         showErrorAlert("Please enter a valid name!");
         return false;
     }
-    if(!address){ //check address
+    if(!/^[A-Za-z\s]+$/.test(address)){ //check address
         showErrorAlert("Please enter a valid address!");
         return false;
     }
-    if(!contact){ //check address
+    if(!/^\d{10}$/.test(contact)){ //check address
         showErrorAlert("Please enter a valid Contact!");
         return false;
     }

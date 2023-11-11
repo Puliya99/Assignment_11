@@ -8,7 +8,7 @@ const loadtTable = () =>{
                 <td>${order.id}</td>
                 <td> ${order.date} </td>
                 <td> ${order.customer} </td>
-                <td> <i class="fa-solid fa-circle-info"></i> ${order.items.length}  </td>
+                <td> ${order.items.length}  </td>
                 <td> ${order.discount} </td>
                 <td> ${order.total} </td>
             </tr>

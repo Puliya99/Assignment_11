@@ -113,19 +113,19 @@ $("#item_delete").on('click', () => {
 //validation
 function checkValidation(id, name, price, qty){
     console.log(id);
-    if(!/^I\d{3}$/.test(id)){ //chekc ID
+    if(!/^I\d{3}$/.test(id)){
         showErrorAlert("Please enter a valid ID!")
         return false;
     }
-    if(!name){ //check name
+    if(!/^[A-Za-z\s]+$/.test(name)){
         showErrorAlert("Please enter a name!");
         return false;
     }
-    if(!/^\d+(\.\d{1,2})?$/.test(price.toString())){ //check address
+    if(!/^\d+(\.\d{1,2})?$/.test(price.toString())){
         showErrorAlert("Please enter a price for item!");
         return false;
     }
-    if(!qty || qty == 0){ //check salary
+    if(!qty || qty == 0){
         showErrorAlert("Please enter a quantity");
         return false;
     }
