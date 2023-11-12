@@ -39,6 +39,12 @@
     <img src="assests/background.jpg" alt="back" id="back">
 </section>
 
+<!--Store Section-->
+<section>
+
+
+</section>
+
 <!--  Customer Section-->
 <section id="customer-section" class="container">
 
@@ -62,8 +68,8 @@
                     <input type="text" class="form-control black-border-1" id="cusContact">
                 </div>
                 <div class="buttons">
-                    <button id="save" type="button" class="btn btn-success mb-1">Save</button>
-                    <button id="update" type="button" class="btn btn-primary mb-1">Update</button>
+                    <button id="save" type="button" class="btn btn-primary mb-1">Save</button>
+                    <button id="update" type="button" class="btn btn-success mb-1">Update</button>
                     <button id="delete" type="button" class="btn btn-danger mb-1">Delete</button>
                     <button id="reset" type="reset" class="btn btn-warning mb-3">Clear</button>
                 </div>
@@ -96,7 +102,7 @@
                     <input type="text" class="form-control black-border-1" id="itemId" placeholder="I001">
                 </div>
                 <div class="mb-3 col-lg-12 col-md-8">
-                    <label for="itemName" class="form-label">Item Name</label>
+                    <label for="itemName" class="form-label">Description</label>
                     <input type="text" class="form-control black-border-1" id="itemName">
                 </div>
                 <div class="mb-3 col-lg-12 col-md-8">
@@ -108,8 +114,8 @@
                     <input type="text" class="form-control black-border-1" id="itemQty" placeholder="0">
                 </div>
                 <div class="buttons">
-                    <button id="item_save" type="button" class="btn btn-success mb-1">Save</button>
-                    <button id="item_update" type="button" class="btn btn-primary mb-1">Update</button>
+                    <button id="item_save" type="button" class="btn btn-primary mb-1">Save</button>
+                    <button id="item_update" type="button" class="btn btn-success mb-1">Update</button>
                     <button id="item_delete" type="button" class="btn btn-danger mb-1">Delete</button>
                     <button id="item_reset" type="reset" class="btn btn-warning mb-3">Clear</button>
                 </div>
@@ -119,7 +125,7 @@
             <table class="table table-bordered">
                 <thead>
                 <th>Id</th>
-                <th>Item Name</th>
+                <th>Description</th>
                 <th>Price</th>
                 <th>Qty</th>
                 </thead>
@@ -159,7 +165,6 @@
                     <select id="orderCusId" class="form-select black-border-1" aria-label="Default select example">
                     </select>
                 </div>
-
                 <div class="mb-3 col-lg-4 col-md-8 col-12">
                     <label for="orderCusName" class="form-label">Customer Name</label>
                     <input type="text" class="form-control black-border-1" id="orderCusName" disabled>
@@ -186,7 +191,7 @@
                     </select>
                 </div>
                 <div class="mb-3 col-lg-6 col-md-8">
-                    <label for="orderItemName" class="form-label">Item Name</label>
+                    <label for="orderItemName" class="form-label">Description</label>
                     <input type="text" class="form-control black-border-1" id="orderItemName" disabled>
                 </div>
                 <div class="mb-3 col-lg-4 col-md-6">
@@ -203,14 +208,14 @@
                 </div>
 
                 <div class="mb-3 col-lg-4 col-3">
-                    <label for="add-item-btn" class="form-label" style="color: #FEFFD4;">o</label><br>
+                    <label for="add-item-btn" class="form-label" style="color: #FEFFD4;"></label><br>
                     <button id="add-item-btn" type="button" class="btn btn-primary mb-1 black-border-1">Add Item +</button>
                 </div>
 
             </form>
         </div>
 
-        <div class="col container order-pane mb-3 d-flex">
+        <div class="col container mb-3 d-flex">
             <form action="" class="row">
                 <div class="col-lg-5 col-md-6 col-12 row mt-2 mb-2">
                     <div class="col col-12 mb-2">
@@ -250,7 +255,7 @@
             <table class="table table-bordered">
                 <thead>
                 <th>Item ID</th>
-                <th>Item Name</th>
+                <th>Description</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th id="total">Total</th>
