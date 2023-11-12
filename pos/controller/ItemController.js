@@ -117,8 +117,8 @@ function checkValidation(id, name, price, qty){
         showErrorAlert("Please enter a valid ID!")
         return false;
     }
-    if(!/^[A-Za-z\s]+$/.test(name)){
-        showErrorAlert("Please enter a name!");
+    if(!/^[A-Za-z./0-9-–\s]+$/.test(name)){
+        showErrorAlert("Please enter a description!");
         return false;
     }
     if(!/^\d+(\.\d{1,2})?$/.test(price.toString())){
